@@ -11,9 +11,11 @@ spec:
   sources:
   - repoURL: 'https://github.com/shukuchicoding/vdt_web-config.git'
     targetRevision: HEAD
+    path: .
     helm:
       valueFiles:
       - $values/app-values.yaml
-  - repoURL: 'https://github.com/shukuchicoding/vdt_web-config.git'
+  - repoURL: 'https://github.com/shukuchicoding/vdt-api-config.git'
     targetRevision: HEAD
     ref: values
+    path: .
