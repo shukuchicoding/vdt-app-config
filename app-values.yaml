@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: app
+  
+spec:
+  destination:
+    name: ''
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  sources:
+  - repoURL: 'https://github.com/shukuchicoding/vdt_web-config.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - $values/app-values.yaml
+  - repoURL: 'https://github.com/shukuchicoding/vdt_web-config.git'
+    targetRevision: HEAD
+    ref: values
