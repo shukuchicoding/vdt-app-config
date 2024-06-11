@@ -12,10 +12,12 @@ spec:
   - repoURL: 'https://github.com/shukuchicoding/vdt_web-config.git'
     targetRevision: HEAD
     path: .
-    helm:
+    helm: web-config
       valueFiles:
-      - $values/app-values.yaml
+      - $values/values.yaml
   - repoURL: 'https://github.com/shukuchicoding/vdt-api-config.git'
     targetRevision: HEAD
-    ref: values
+    helm: api-config
+      valueFiles:
+      - $values/values.yaml
     path: .
